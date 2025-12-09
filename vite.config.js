@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import {dirname, resolve} from 'path'
-import { fileURLToPath } from 'url'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -11,11 +10,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '#components': resolve(dirname(fileURLToPath(import.meta.url)), 'src/components'),
-      '#constants': resolve(dirname(fileURLToPath(import.meta.url)), 'src/constants'),
-      '#store': resolve(dirname(fileURLToPath(import.meta.url)), 'src/store'),
-      '#hoc': resolve(dirname(fileURLToPath(import.meta.url)), 'src/hoc'),
-      '#windows': resolve(dirname(fileURLToPath(import.meta.url)), 'src/windows'),
+      '#components': path.resolve(process.cwd(), 'src/components'),
+      '#constants':  path.resolve(process.cwd(), 'src/constants'),
+      '#store':      path.resolve(process.cwd(), 'src/store'),
+      '#hoc':        path.resolve(process.cwd(), 'src/hoc'),
+      '#windows':    path.resolve(process.cwd(), 'src/windows'),
     }
   }
 })
