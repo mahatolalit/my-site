@@ -16,7 +16,9 @@ export default defineConfig({
       '#hoc':        path.resolve(process.cwd(), 'src/hoc'),
       '#windows':    path.resolve(process.cwd(), 'src/windows'),
 
+       // extra aliases to catch literal 'src/... or 'constants' imports
       'src': path.resolve(process.cwd(), 'src'),
+      'constants': path.resolve(process.cwd(), 'src/constants'),
     }
   }
 })
