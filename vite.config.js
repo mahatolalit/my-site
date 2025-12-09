@@ -15,6 +15,8 @@ export default defineConfig({
       '#store':      path.resolve(process.cwd(), 'src/store'),
       '#hoc':        path.resolve(process.cwd(), 'src/hoc'),
       '#windows':    path.resolve(process.cwd(), 'src/windows'),
+
+      'src': path.resolve(process.cwd(), 'src'),
     }
   }
 })
