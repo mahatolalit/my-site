@@ -3,14 +3,20 @@ import Navbar from '#components/Navbar'
 import StickyWIP from '#components/StickyWIP'
 import Welcome from '#components/Welcome'
 import React from 'react'
+import gsap from 'gsap'
+import { Draggable } from 'gsap/Draggable'
+import Terminal from '#windows/Terminal'
+gsap.registerPlugin(Draggable)
 
 const App = () => {
   return (
     <main>
-      <StickyWIP/> {/* WIP Notification */}
+      {/* <StickyWIP/> WIP Notification */}
       <Navbar/>
       <Welcome/>
       <Dock/>
+
+      <Terminal/>
     </main>
   )
 }
