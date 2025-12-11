@@ -11,7 +11,7 @@ gsap.registerPlugin(Draggable)
 const App = () => {
   return (
     <main>
-      {/* <StickyWIP/> WIP Notification */}
+      <StickyWIP/> {/* WIP notification banner */}
       <Navbar/>
       <Welcome/>
       <Dock/>
