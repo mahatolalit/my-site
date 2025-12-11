@@ -1,5 +1,5 @@
 import { dockApps } from '#constants'
-import useWindowStore from '#store/window'
+import useWindowStore from '#store/window.js'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React, { useRef } from 'react'
@@ -76,28 +76,25 @@ const Dock = () => {
     return (
         <section id='dock'>
             <div ref={dockRef} className='dock-container'>
-                {dockApps.map(({
-                    id,
-                    name,
-                    icon,
-                    canOpen
-                }) => (
-                    <div key={id} className='relative flex justify-center'>
+                {dockApps.map((app) => (
+                    <div key={app.id} className='relative flex justify-center'>
                         <button
                             type='button'
                             className='dock-icon'
-                            aria-label={name}
+                            id={`icon-${app.id}`}
+
+                            aria-label={app.name}
                             data-tooltip-id='dock-tooltip'
-                            data-tooltip-content={name}
+                            data-tooltip-content={app.name}
                             data-tooltip-delay-show={150}
-                            disabled={!canOpen}
+                            disabled={!app.canOpen}
                             onClick={() => toggleApp(app)}
                         >
                             <img
-                                src={`/images/${icon}`}
-                                alt={name}
+                                src={`/images/${app.icon}`}
+                                alt={app.name}
                                 loading='lazy'
-                                className={canOpen ? "" : "opacity-60"}
+                                className={app.canOpen ? "" : "opacity-60"}
                             />
                         </button>
                     </div>
