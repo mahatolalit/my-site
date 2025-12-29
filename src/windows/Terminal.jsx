@@ -15,15 +15,15 @@ const Terminal = () => {
                     <span className="font-bold">@lalit % </span>
                     show tech stack
                 </p>
-                <div className="label">
+                <div className="label max-sm:hidden">
                     <p className="w-32">Category</p>
                     <p>Technologies</p>
                 </div>
 
                 <ul className="content">
                     {techStack.map(({ category, items }) => (
-                        <li key={category} className="flex items-center">
-                            <Check className="check" size={20} />
+                        <li key={category} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0">
+                            <Check className="check max-sm:hidden" size={20} />
                             <h3>{category}</h3>
                             <ul>
                                 {items.map((item, i) => (
