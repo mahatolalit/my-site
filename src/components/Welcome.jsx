@@ -71,16 +71,12 @@ const Welcome = () => {
 
   return (
     <section id="welcome">
-      <p ref={subtitleRef}>
-        {renderText("Hey, I'm Lalit! This is my", 'text-3xl font-georama', 100)}
+      <p ref={subtitleRef} className='text-center px-5'>
+        {renderText("Hey, I'm Lalit! This is my", 'text-xl sm:text-3xl font-georama', 100)}
       </p>
-      <h1 ref={titleRef} className='mt-7'>
-        {renderText("portfolio", 'text-9xl italic font-georama')}
+      <h1 ref={titleRef} className='mt-7 text-center'>
+        {renderText("portfolio", 'text-5xl sm:text-9xl italic font-georama')}
       </h1>
-
-      <div className='small-screen'>
-        <p>This Portfolio is designed for desktop/tablet screens</p>
-      </div>
     </section>
   )
 }
