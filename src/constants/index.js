@@ -158,7 +158,7 @@ const finderItems = [
     selected: false,
   },
   {
-    id: 5,
+    id: 10,
     title: "Socials",
     icon: "/icons/share.svg",
     selected: false,
@@ -404,7 +404,7 @@ const TRASH_LOCATION = {
 };
 
 const SOCIALS_LOCATION = {
-  id: 5,
+  id: 10,
   type: "socials",
   name: "Socials",
   icon: "/icons/share.svg", 

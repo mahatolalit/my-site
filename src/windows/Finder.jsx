@@ -36,7 +36,7 @@ const Finder = () => {
              return locations.resume.children;
         } else if (active === 4) { // Trash
              return locations.trash.children;
-        } else if (active === 5) { // Socials
+        } else if (active === 10) { // Socials
              return locations.socials.children;
         } else {
              // Check if it's a subfolder in Work
