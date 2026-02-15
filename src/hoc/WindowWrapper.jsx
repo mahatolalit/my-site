@@ -7,8 +7,11 @@ import { useLayoutEffect, useRef } from "react";
 const WindowWrapper = (Component, windowKey) => {
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
-    const { isOpen, zIndex } = windows[windowKey];
+    const { isOpen, zIndex, isMaximized, isMinimized } = windows[windowKey];
+
     const ref = useRef(null);
+    const draggableRef = useRef(null);
+    const lastPosition = useRef({ x: 0, y: 0 });
 
     useGSAP(()=> {
         const el = ref.current
@@ -27,8 +30,12 @@ const WindowWrapper = (Component, windowKey) => {
       if(!el) return;
 
       const [instance] = Draggable.create(el, {
-        onPress() { focusWindow(windowKey) }
+        onPress() { focusWindow(windowKey) },
+        allowEventDefault: true,
+        dragClickables: false,
       });
+      draggableRef.current = instance
+
 
       return () => {
         instance.kill()
@@ -38,8 +45,66 @@ const WindowWrapper = (Component, windowKey) => {
     useLayoutEffect(()=> {
         const el = ref.current
         if (!el) return
-        el.style.display = isOpen ? "block" : "none"
-    }, [isOpen])
+        
+        if (isOpen && !isMinimized) {
+            el.style.display = "block"
+            // Restore scale/opacity if needed, but GSAP animation above handles opening
+            // When un-minimizing, we might want to animate in?
+            // For now, simple toggling.
+            if (!isMaximized) {
+                // Ensure transforms are respected if not maximized
+                if (draggableRef.current) draggableRef.current.enable()
+            }
+        } else {
+            el.style.display = "none"
+        }
+
+    }, [isOpen, isMinimized])
+
+    useGSAP(() => {
+        const el = ref.current;
+        if(!el) return;
+
+        if(isMaximized) {
+            if(draggableRef.current) {
+                lastPosition.current = { x: draggableRef.current.x, y: draggableRef.current.y };
+                draggableRef.current.disable();
+            }
+            
+            gsap.to(el, {
+                width: "100%",
+                height: "100%",
+                top: 0,
+                left: 0,
+                xPercent: 0,
+                yPercent: 0,
+                x: 0, 
+                y: 0,
+                borderRadius: 0,
+                duration: 0.3,
+                ease: "power2.inOut"
+            });
+        } else {
+            const { x, y } = lastPosition.current;
+            
+            gsap.to(el, {
+                width: "auto", 
+                height: "auto",
+                borderRadius: "0.5rem",
+                clearProps: "top,left,width,height", // Clear size/pos overrides but Keep x/y transforms if possible or reset them below
+                x: x,
+                y: y,
+                duration: 0.3,
+                ease: "power2.inOut",
+                onComplete: () => {
+                     if (draggableRef.current) {
+                        draggableRef.current.enable();
+                        draggableRef.current.update(); 
+                     }
+                }
+            });
+        }
+    }, [isMaximized])
 
     return (
       <section 
