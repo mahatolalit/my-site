@@ -71,10 +71,13 @@ const WindowWrapper = (Component, windowKey) => {
                 draggableRef.current.disable();
             }
             
+            const nav = document.querySelector("nav");
+            const navHeight = nav ? nav.getBoundingClientRect().height : 0;
+
             gsap.to(el, {
                 width: "100%",
-                height: "100%",
-                top: 0,
+                height: `calc(100vh - ${navHeight}px)`,
+                top: navHeight,
                 left: 0,
                 xPercent: 0,
                 yPercent: 0,
