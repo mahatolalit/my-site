@@ -67,48 +67,17 @@ const dockApps = [
     canOpen: true,
   },
   {
-    id: "resume",
-    name: "Resume",
-    icon: "pdf.png",
-    canOpen: true,
-  },
-  {
     id: "trash",
     name: "Archive", // was "Trash"
     icon: "trash.png",
-    canOpen: false,
-  },
-];
-
-const blogPosts = [
-  {
-    id: 1,
-    date: "Sep 2, 2025",
-    title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
-  },
-  {
-    id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
-  },
-  {
-    id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
+    canOpen: true,
   },
 ];
 
 const techStack = [
   {
     category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    items: ["React.js", "JavaScript", "HTML/CSS"],
   },
   {
     category: "Mobile",
@@ -120,7 +89,7 @@ const techStack = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: ["Node.js", "Express"],
   },
   {
     category: "Database",
@@ -128,7 +97,7 @@ const techStack = [
   },
   {
     category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    items: ["Git", "GitHub", "Postman"],
   },
 ];
 
@@ -137,76 +106,78 @@ const socials = [
     id: 1,
     text: "Github",
     icon: "/icons/github.svg",
-    bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    bg: "#24292e",
+    link: "https://github.com/mahatolalit",
   },
   {
     id: 2,
     text: "Platform",
     icon: "/icons/atom.svg",
     bg: "#4bcb63",
-    link: "https://jsmastery.com/",
+    link: "https://lalitmahato.xyz/",
   },
   {
     id: 3,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
-    bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
+    bg: "#000000",
+    link: "https://x.com/_mahatolalit",
   },
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "https://www.linkedin.com/in/lalitmahato1/",
   },
 ];
 
-const photosLinks = [
+const finderItems = [
   {
     id: 1,
-    icon: "/icons/gicon1.svg",
-    title: "Library",
+    title: "Work",
+    icon: "/icons/work.svg",
+    selected: true,
   },
   {
     id: 2,
-    icon: "/icons/gicon2.svg",
-    title: "Memories",
+    title: "About me",
+    icon: "/icons/user.svg",
+    selected: false,
   },
   {
     id: 3,
+    title: "Resume",
     icon: "/icons/file.svg",
-    title: "Places",
+    selected: false,
   },
   {
     id: 4,
-    icon: "/icons/gicon4.svg",
-    title: "People",
+    title: "Trash",
+    icon: "/icons/trash.svg",
+    selected: false,
   },
   {
     id: 5,
-    icon: "/icons/gicon5.svg",
-    title: "Favorites",
+    title: "Socials",
+    icon: "/icons/share.svg",
+    selected: false,
   },
 ];
 
-const gallery = [
+const startUpProjects = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    title: "Authentication System",
+    desc: "A full-stack authentication system.",
+    icon: "/images/folder.png",
   },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
+
   {
     id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
+    title: "RealTime Chat App",
+    desc: "Full stack chat application",
+    icon: "/images/folder.png",
   },
 ];
 
@@ -214,11 +185,10 @@ export {
   navLinks,
   navIcons,
   dockApps,
-  blogPosts,
   techStack,
   socials,
-  photosLinks,
-  gallery,
+  finderItems,
+  startUpProjects,
 };
 
 const WORK_LOCATION = {
@@ -231,7 +201,7 @@ const WORK_LOCATION = {
     // ▶ Project 1
     {
       id: 5,
-      name: "Nike Ecommerce Website Application",
+      name: "Authentication System with Email verification",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
@@ -239,30 +209,27 @@ const WORK_LOCATION = {
       children: [
         {
           id: 1,
-          name: "Nike Project.txt",
+          name: "Authentication System.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           description: [
-            "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-            "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-            "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-            "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+            "Authentication System (Node.js, Express). Architected a secure identity management system using JWT for stateless 7-day session maintenance. Implemented middleware-based route protection and time-sensitive security protocols, including SMTP-integrated OTP verification and token-based password resets with strict expiration policies",
           ],
         },
         {
           id: 2,
-          name: "nike.com",
+          name: "authsystem.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
+          href: "https://authsystem.lalitmahato.xyz",
           position: "top-10 right-20",
         },
         {
           id: 4,
-          name: "nike.png",
+          name: "poster.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
@@ -272,7 +239,7 @@ const WORK_LOCATION = {
         {
           id: 5,
           name: "Design.fig",
-          icon: "/images/plain.png",
+          icon: "/images/figma.png",
           kind: "file",
           fileType: "fig",
           href: "https://google.com",
@@ -284,7 +251,7 @@ const WORK_LOCATION = {
     // ▶ Project 2
     {
       id: 6,
-      name: "AI Resume Analyzer",
+      name: "Realtime Chat App",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-52 right-80",
@@ -292,30 +259,27 @@ const WORK_LOCATION = {
       children: [
         {
           id: 1,
-          name: "AI Resume Analyzer Project.txt",
+          name: "Kairos Chat App.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 right-10",
           description: [
-            "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
-            "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
-            "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
-            "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
+            "Kairos (Real-time Chat). Built a live messaging application using Node.js and Socket.IO. Implemented secure login with JWT, image sharing using Cloudinary, and stored message history in a MongoDB database",
           ],
         },
         {
           id: 2,
-          name: "ai-resume-analyzer.com",
+          name: "kairos.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
+          href: "https://kairos.lalitmahato.xyz",
           position: "top-20 left-20",
         },
         {
           id: 4,
-          name: "ai-resume-analyzer.png",
+          name: "poster.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
@@ -325,7 +289,7 @@ const WORK_LOCATION = {
         {
           id: 5,
           name: "Design.fig",
-          icon: "/images/plain.png",
+          icon: "/images/figma.png",
           kind: "file",
           fileType: "fig",
           href: "https://google.com",
@@ -335,57 +299,7 @@ const WORK_LOCATION = {
     },
 
     // ▶ Project 3
-    {
-      id: 7,
-      name: "Food Delivery App",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-10 left-80",
-      windowPosition: "top-[33vh] left-7",
-      children: [
-        {
-          id: 1,
-          name: "Food Delivery App Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-5 left-10",
-          description: [
-            "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-            "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-            "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-            "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
-          ],
-        },
-        {
-          id: 2,
-          name: "food-delivery-app.com",
-          icon: "/images/safari.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
-          position: "top-10 right-20",
-        },
-        {
-          id: 4,
-          name: "food-delivery-app.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "top-52 right-80",
-          imageUrl: "/images/project-3.png",
-        },
-        {
-          id: 5,
-          name: "Design.fig",
-          icon: "/images/plain.png",
-          kind: "file",
-          fileType: "fig",
-          href: "https://google.com",
-          position: "top-60 right-20",
-        },
-      ],
-    },
+    
   ],
 };
 
@@ -398,30 +312,30 @@ const ABOUT_LOCATION = {
   children: [
     {
       id: 1,
-      name: "me.png",
+      name: "me.jpg",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/lalit.jpg",
+      imageUrl: "/images/IMG20251231080719.jpg",
     },
     {
       id: 2,
-      name: "casual-me.png",
+      name: "another-one-of-me.jpg",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
-      imageUrl: "/images/lalit-2.jpg",
+      imageUrl: "/images/IMG20251231081114.jpg",
     },
     {
       id: 3,
-      name: "conference-me.png",
+      name: "at-work.jpg",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
-      imageUrl: "/images/lalit-3.jpeg",
+      imageUrl: "/images/PXL_20260214_114312869.jpg",
     },
     {
       id: 4,
@@ -475,7 +389,7 @@ const TRASH_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-10",
-      imageUrl: "/images/trash-1.png",
+      imageUrl: "/images/PXL_20260118_162906737.jpg",
     },
     {
       id: 2,
@@ -484,9 +398,26 @@ const TRASH_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-40 left-80",
-      imageUrl: "/images/trash-2.png",
+      imageUrl: "/images/PXL_20251214_062906600.jpg",
     },
   ],
+};
+
+const SOCIALS_LOCATION = {
+  id: 5,
+  type: "socials",
+  name: "Socials",
+  icon: "/icons/share.svg", 
+  kind: "folder",
+  children: socials.map((item) => ({
+    id: item.id,
+    name: item.text,
+    icon: item.icon, 
+    bg: item.bg, // Preserve background color
+    kind: "file",
+    fileType: "url",
+    href: item.link, 
+  })),
 };
 
 export const locations = {
@@ -494,6 +425,7 @@ export const locations = {
   about: ABOUT_LOCATION,
   resume: RESUME_LOCATION,
   trash: TRASH_LOCATION,
+  socials: SOCIALS_LOCATION,
 };
 
 const INITIAL_Z_INDEX = 1000;
