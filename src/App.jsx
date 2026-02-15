@@ -21,8 +21,8 @@ const App = () => {
 
       <Terminal/>
       <Safari/>
-      <Resume className="left-0 right-0 mx-auto top-[8%] w-[70%] sm:w-[60%] h-[70%] sm:h-[80vh]"/>
-      <Contact className="left-0 right-0 mx-auto top-[15%] w-[90%] sm:w-[40%] h-[70vh]"/>
+      <Resume className="left-[15%] sm:left-[20%] right-0 top-[8%] w-[70%] sm:w-[60%] h-[70%] sm:h-[80vh] translate-x-0"/>
+      <Contact className="left-[5%] sm:left-[30%] right-0 top-[15%] w-[90%] sm:w-[40%] h-[70vh] translate-x-0"/>
     </main>
   )
 }
