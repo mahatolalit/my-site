@@ -23,7 +23,7 @@ const App = () => {
     <main>
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       
-      <StickyWIP/> {/* WIP notification banner */}
+      {/* <StickyWIP/> WIP notification banner */}
       <Navbar/>
       <Welcome/>
       <Home />
