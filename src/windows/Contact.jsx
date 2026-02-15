@@ -75,9 +75,9 @@ const Contact = () => {
     return (
         <div className="h-full flex flex-col bg-white w-full rounded-xl overflow-hidden">
             {/* Header */}
-            <div id="window-header" className="bg-[#f3f4f6] px-4 py-3 flex items-center border-b border-[#e5e7eb] shrink-0">
+            <div id="window-header" className="bg-[#f3f4f6] px-4 py-3 flex items-center border-b border-[#e5e7eb] shrink-0 relative">
                 <WindowControls target="contact" />
-                <div className="flex-1 text-center font-medium text-gray-700 -ml-14">Contact Me</div>
+                <div className="absolute inset-x-0 pointer-events-none flex items-center justify-center font-medium text-gray-700">Contact Me</div>
             </div>
 
             {/* Content */}

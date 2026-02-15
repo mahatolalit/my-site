@@ -80,6 +80,7 @@ const WindowWrapper = (Component, windowKey) => {
             gsap.to(el, {
                 width: "100%",
                 height: `calc(100vh - ${navHeight}px)`,
+                maxWidth: "100%",
                 top: navHeight,
                 left: 0,
                 xPercent: 0,
@@ -97,7 +98,7 @@ const WindowWrapper = (Component, windowKey) => {
                 width: "auto", 
                 height: "auto",
                 borderRadius: "0.5rem",
-                clearProps: "top,left,width,height", // Clear size/pos overrides but Keep x/y transforms if possible or reset them below
+                clearProps: "top,left,width,height,maxWidth", // Clear size/pos overrides but Keep x/y transforms if possible or reset them below
                 x: x,
                 y: y,
                 duration: 0.3,
