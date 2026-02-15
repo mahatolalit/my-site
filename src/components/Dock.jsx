@@ -62,8 +62,14 @@ const Dock = () => {
     }, [])
 
     const toggleApp = (app) => {
+        console.log("Toggle App:", app.id);
         if (!app.canOpen) return;
         const window = windows[app.id];
+        
+        if(!window) {
+            console.error(`Window config not found for ${app.id}`);
+            return;
+        }
 
         if (window.isOpen) {
             if (window.isMinimized) {
@@ -72,6 +78,7 @@ const Dock = () => {
                 minimizeWindow(app.id);
             }
         } else {
+            console.log("Opening window:", app.id);
             openWindow(app.id);
         }
     }

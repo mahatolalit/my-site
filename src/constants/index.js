@@ -67,6 +67,12 @@ const dockApps = [
     canOpen: true,
   },
   {
+    id: "resume",
+    name: "Resume",
+    icon: "pdf.png",
+    canOpen: true,
+  },
+  {
     id: "trash",
     name: "Archive", // was "Trash"
     icon: "trash.png",
@@ -440,7 +446,7 @@ const RESUME_LOCATION = {
   id: 3,
   type: "resume",
   name: "Resume",
-  icon: "/icons/file.svg",
+  icon: "/images/pdf.png",
   kind: "folder",
   children: [
     {

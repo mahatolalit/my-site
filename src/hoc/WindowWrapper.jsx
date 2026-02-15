@@ -112,14 +112,16 @@ const WindowWrapper = (Component, windowKey) => {
         }
     }, [isMaximized])
 
+    const { className: wrapperClassName, ...restProps } = props;
+
     return (
       <section 
         id={windowKey} 
         ref={ref} 
         style={{ zIndex }}
-        className="absolute"
+        className={`absolute ${wrapperClassName || ""}`}
       >
-        <Component { ...props } />
+        <Component { ...restProps } />
       </section>
     );
   };
