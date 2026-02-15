@@ -14,9 +14,20 @@ const Home = () => {
             draggables = Draggable.create(".desktop-icon", {
                 bounds: containerRef.current,
                 inertia: true,
+                type: "x,y",
+                dragClickables: true, // Allow clicking on draggable elements
+                allowEventDefault: true, // Allow default events like scrolling if strict is false
                 onDragStart: function() {
                     gsap.to(this.target, { scale: 1.1, duration: 0.1 });
                     this.startPos = { x: this.x, y: this.y };
+                },
+                onClick: function() {
+                     // Get the item id from the element's dataset or similar
+                     // Since we can't easily pass the item object here directly without closure issues 
+                     // or creating one draggable per item (which we are doing via selector but config is shared),
+                     // let's rely on React's onClick, which 'dragClickables: true' should enable.
+                     // OR, simpler: use this.target to find the reactor data? No.
+                     // Actually, if we use React's onClick, we just need to ensure Draggable doesn't eat the event.
                 },
                 onDragEnd: function() {
                     gsap.to(this.target, { scale: 1, duration: 0.1 });
@@ -52,8 +63,6 @@ const Home = () => {
     }
 
     const handleIconClick = (item) => {
-        if (this?.isDragging) return; // Prevent click if dragging
-        
         if (item.title === 'Resume') {
             openWindow('resume')
             return
@@ -76,13 +85,13 @@ const Home = () => {
     }
 
     return (
-        <div ref={containerRef} className="absolute inset-0 z-0 w-full h-full overflow-hidden pointer-events-none">
+        <div ref={containerRef} className="absolute inset-0 z-10 w-full h-full overflow-hidden pointer-events-none">
             {/* Desktop Icons Container - Using absolute positioning for spread layout */}
-            <div className="w-full h-full relative pointer-events-auto">
+            <div className="w-full h-full relative">
                  {desktopItems.map((item, index) => (
                     <div 
                         key={item.id}
-                        className={`desktop-icon absolute flex flex-col items-center gap-1 group cursor-pointer w-20 sm:w-24 p-2 rounded hover:bg-white/10 transition-colors ${getPositionClass(index)}`}
+                        className={`desktop-icon absolute flex flex-col items-center gap-1 group cursor-pointer w-20 sm:w-24 p-2 rounded hover:bg-white/10 transition-colors touch-none pointer-events-auto ${getPositionClass(index)}`}
                         onClick={(e) => {
                             // Only trigger if not dragging - simplistic check, but Draggable usually suppresses click
                             handleIconClick(item)

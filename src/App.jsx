@@ -18,9 +18,9 @@ const App = () => {
   return (
     <main>
       <StickyWIP/> {/* WIP notification banner */}
-      <Home />
       <Navbar/>
       <Welcome/>
+      <Home />
       <Dock/>
 
       <Terminal className="left-0 right-0 mx-auto top-[10%] sm:top-[15%] w-[90%] sm:w-[60%] h-[80%] sm:h-[70vh] translate-x-0"/>
