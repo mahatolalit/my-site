@@ -12,11 +12,17 @@ import Resume from '#windows/Resume'
 import Contact from '#windows/Contact'
 import Finder from '#windows/Finder'
 import ImgFile from '#windows/ImgFile'
+import LoadingScreen from '#components/LoadingScreen'
+import { useState } from 'react'
 gsap.registerPlugin(Draggable)
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true)
+
   return (
     <main>
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      
       <StickyWIP/> {/* WIP notification banner */}
       <Navbar/>
       <Welcome/>
