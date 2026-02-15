@@ -11,16 +11,6 @@ const Navbar = () => {
         <div>
             <img src="/images/logo.svg" alt="Apple Logo" />
             <p className='font-bold'>Lalit's Portfolio</p>
-
-            <ul>
-                {
-                    navLinks.map(( {id, name, type} ) => (
-                        <li key={id} onClick={() => openWindow(type)} className="cursor-pointer">
-                            <p>{name}</p>
-                        </li>
-                    ))
-                }
-            </ul>
         </div>
 
         <div>
