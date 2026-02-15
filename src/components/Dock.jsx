@@ -64,6 +64,17 @@ const Dock = () => {
     const toggleApp = (app) => {
         console.log("Toggle App:", app.id);
         if (!app.canOpen) return;
+
+        if (app.id === "photos") {
+            openWindow("finder", { activeId: 2, t: Date.now() });
+            return;
+        }
+
+        if (app.id === "trash") {
+            openWindow("finder", { activeId: 4, t: Date.now() });
+            return;
+        }
+
         const window = windows[app.id];
         
         if(!window) {
