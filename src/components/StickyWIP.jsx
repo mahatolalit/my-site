@@ -84,7 +84,7 @@ export default function StickyWIP() {
             <button
               onClick={() => {
                 // example: open /wip-info or external changelog
-                window.location.href = '/wip';
+                window.location.href = 'https://teamhub.com/blog/understanding-work-in-progress-wip-in-software-development/';
               }}
               className="px-3 py-1 rounded-md text-sm font-medium border border-transparent bg-white/60 hover:bg-white/80 shadow-sm"
               aria-label="Learn more about WIP"
