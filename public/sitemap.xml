@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Main Portfolio Page -->
   <url>
     <loc>https://lalitmahato.xyz/</loc>
     <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://lalitmahato.xyz/images/wallpaper.jpg</image:loc>
+      <image:title>Lalit Mahato Portfolio Wallpaper</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lalitmahato.xyz/images/IMG20251231080719.jpg</image:loc>
+      <image:title>Lalit Mahato — Web Developer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lalitmahato.xyz/images/IMG20251231081114.jpg</image:loc>
+      <image:title>Lalit Mahato — Developer Photo</image:title>
+    </image:image>
   </url>
 
   <!-- SEO Content Files -->
