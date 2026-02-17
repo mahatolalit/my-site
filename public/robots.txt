@@ -3,8 +3,6 @@
 
 User-agent: *
 Allow: /
-Allow: /site-info.txt
-Allow: /about.txt
 
 # Sitemap location
 Sitemap: https://lalitmahato.xyz/sitemap.xml

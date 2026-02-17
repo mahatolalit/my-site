@@ -20,19 +20,4 @@
       <image:title>Lalit Mahato — Developer Photo</image:title>
     </image:image>
   </url>
-
-  <!-- SEO Content Files -->
-  <url>
-    <loc>https://lalitmahato.xyz/site-info.txt</loc>
-    <lastmod>2026-02-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://lalitmahato.xyz/about.txt</loc>
-    <lastmod>2026-02-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 </urlset>
