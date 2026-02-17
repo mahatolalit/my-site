@@ -1,0 +1,50 @@
+# robots.txt for lalitmahato.xyz
+# Lalit Mahato — Web Developer Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lalitmahato.xyz/sitemap.xml
+
+# Crawl-delay (be nice to bots)
+Crawl-delay: 1
+
+# Block sensitive files
+Disallow: /files/resume.pdf
+
+# Block all icons
+Disallow: /icons/
+
+# Block all images by default, then allow specific ones
+Disallow: /images/
+Allow: /images/wallpaper.jpg
+Allow: /images/IMG20251231080719.jpg
+Allow: /images/IMG20251231081114.jpg
+
+# Allow favicon directory
+Allow: /favicon/
+
+# Allow Googlebot specifically
+User-agent: Googlebot
+Allow: /
+Disallow: /files/resume.pdf
+Disallow: /icons/
+Disallow: /images/
+Allow: /images/wallpaper.jpg
+Allow: /images/IMG20251231080719.jpg
+Allow: /images/IMG20251231081114.jpg
+Allow: /favicon/
+Crawl-delay: 0
+
+# Allow Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /files/resume.pdf
+Disallow: /icons/
+Disallow: /images/
+Allow: /images/wallpaper.jpg
+Allow: /images/IMG20251231080719.jpg
+Allow: /images/IMG20251231081114.jpg
+Allow: /favicon/
+Crawl-delay: 0
