@@ -3,6 +3,7 @@ import Navbar from '#components/Navbar'
 import StickyWIP from '#components/StickyWIP'
 import Welcome from '#components/Welcome'
 import Home from '#components/Home'
+import SEOContent from '#components/SEOContent'
 import React from 'react'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/Draggable'
@@ -23,6 +24,7 @@ const App = () => {
     <main>
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       
+      <SEOContent />
       {/* <StickyWIP/> WIP notification banner */}
       <Navbar/>
       <Welcome/>
