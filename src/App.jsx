@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Dock from '#components/Dock'
 import Navbar from '#components/Navbar'
 import StickyWIP from '#components/StickyWIP'
@@ -21,6 +22,7 @@ const App = () => {
 
   return (
     <main>
+      <Analytics />
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       
       {/* <StickyWIP/> WIP notification banner */}
